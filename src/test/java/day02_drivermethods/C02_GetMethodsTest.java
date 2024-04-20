@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class C02_GetMethodsTest {
     public static void main(String[] args) {
 
-        WebDriverManager.chromedriver().setup();
+     /*   WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
 
         // Go to TechproEducation page https://www.techproeducation.com/
@@ -46,17 +46,16 @@ public class C02_GetMethodsTest {
             System.out.println("Test FAILED");
         }
         // Close the page.
-        driver.close();
+        driver.close();*/
 
-/*
        WebDriverManager.chromedriver().setup();
        WebDriver driver = new ChromeDriver();
 
         // TechproEducation sayfasina gidin. https://www.techproeducation.com/
-
+        driver.get("https://www.techproeducation.com/");
 
         // Sayfa basligini(title) yazdirin
-       String actualTitle = driver.getTitle();
+        String actualTitle = driver.getTitle();
         System.out.println("actualTitle = " + actualTitle);
 
         // Sayfa basliginin "IT" icerdigini test edin
@@ -67,7 +66,7 @@ public class C02_GetMethodsTest {
         }
 
         // Sayfa adresini(url) yazdirin
-       String pageUrl = driver.getCurrentUrl();
+        String pageUrl = driver.getCurrentUrl();
         System.out.println("pageUrl = " + pageUrl);
 
         // Sayfa url'inin "education" icerdigini test edin.
@@ -76,18 +75,21 @@ public class C02_GetMethodsTest {
         }else {
             System.out.println("Test FAILED");
         }
+
         // Sayfa handle degerini yazdirin
-       String windowHandle = driver.getWindowHandle();
-        System.out.println("windowHandle = " + windowHandle);
+        String pageHandleValue = driver.getWindowHandle();
+        System.out.println("pageHandleValue = " + pageHandleValue);
 
         // Sayfa HTML kodlarinda "IT Programs" kelimesi gectigini test edin
-        String pageSource = driver.getPageSource();
-        if (pageSource.contains("IT Programs")){
-            System.out.println("Test PASSED");
-        }else {
-            System.out.println("Test FAILED");
-        }
+       String htmlCodes = driver.getPageSource();
+       if (htmlCodes.contains("IT Programs")){
+           System.out.println("Test PASSED");
+       }else {
+           System.out.println("Test FAILED");
+       }
+
         // Sayfayi kapatin.
-        driver.quit();*/
+        driver.quit();
+
     }
 }

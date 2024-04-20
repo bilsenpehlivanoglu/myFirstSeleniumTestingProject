@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class C03_NavigateMethods {
     public static void main(String[] args) throws InterruptedException {
 
-        WebDriverManager.chromedriver().setup();
+       /* WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
 
         // go to techproeducation homepage https://www.techproeducation.com/
@@ -31,9 +31,9 @@ public class C03_NavigateMethods {
 
         //Close all pages
         driver.quit();
+*/
 
-
-        /*WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
 
         // techproeducation ana sayfasina gidelim . https://www.techproeducation.com/
@@ -41,7 +41,7 @@ public class C03_NavigateMethods {
         Thread.sleep(3000);
 
         //Amazon sayfasina gidelim. https://www.amazon.com/
-        driver.navigate().to(" https://www.amazon.com/");
+        driver.navigate().to("https://www.amazon.com/");
         Thread.sleep(3000);
 
         //Tekrar techproeducation sayfasina donelim
@@ -57,7 +57,7 @@ public class C03_NavigateMethods {
         Thread.sleep(3000);
 
         //Tum sayfalari kapatalim
-        driver.quit();*/
+        driver.quit();
 
 
     }
