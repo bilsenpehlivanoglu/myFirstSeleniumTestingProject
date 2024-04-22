@@ -17,7 +17,7 @@ public class C02_GetMethodsTest {
         String actualTitle = driver.getTitle();
         System.out.println("actualTitle = " + actualTitle);
 
-        //Test if the page title contains "IT"
+        //Verify if page title contains "IT"
         if (actualTitle.contains("IT")){
             System.out.println("Test PASSED");
         }else {
@@ -28,7 +28,7 @@ public class C02_GetMethodsTest {
         String pageUrl = driver.getCurrentUrl();
         System.out.println("pageUrl = " + pageUrl);
 
-        // Test that the page url contains "education".
+        // Verify if google homepage url "education".
         if (pageUrl.contains("education")){
             System.out.println("Test PASSED");
         }else {
@@ -63,6 +63,7 @@ public class C02_GetMethodsTest {
             System.out.println("Test PASSED");
         }else {
             System.out.println("Test FAILED");
+            System.out.println("Actual Title : "+actualTitle+" doesn't contain expected titler : IT");
         }
 
         // Sayfa adresini(url) yazdirin

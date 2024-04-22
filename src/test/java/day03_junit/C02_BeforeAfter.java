@@ -38,4 +38,5 @@ public class C02_BeforeAfter {
     static void afterAll() {
         System.out.println("tüm test methodların altında");
     }
+
 }
