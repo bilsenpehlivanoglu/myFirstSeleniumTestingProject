@@ -45,6 +45,7 @@ public class Answer_The_Questions {
 //3.Developers also uses JUnit to run unit tests.
 //4.We will learn TestNG framewrok as well which is the advanced vrsion of JUnit.
 //5.We will also use JUnit-Cucumber framerwork to create our final testing framework.
+//NOT:JUnit has similar assertions to TestNG.
 
 //MAVEN
 //1.Maven is a Java build and project management tool.
@@ -60,5 +61,54 @@ public class Answer_The_Questions {
 //3.Works with multiple IDE(intellij,eclipsee,etc) and tools.
 //4.Open source
 //5.Large user base/forums/community
+
+    /*What is assertion?
+    -Assertion is used to check if expected equals to actual
+    -Every test case must have an assertion(her test senaryosunun bir iddiası olmalıdır)
+           expected = actual => PASS
+           exoected != actual => FAIL
+     ----------------------------------------------------------
+     In JUnit Assertions class is used to do assertion(Assert class is used in JUnit5)
+     Assertion.assertEquals
+     Assertion.assertTrue
+     Assertion.assertFalse
+     Assertion.assertNull
+     --------------------------------------------------------
+     These assertions are HARD ASSERTS,it means if assertion fails,
+     test case STOPS and do not execute the rest of that test case
+        */
+
+   /*WEBELEMENTS
+    1.Anything on the webpage is called webelement
+    2.Button,search box, text box,headers,tables,etc.
+    3.There are different type of WebElement tags like <html>,<body>,<form>,<label>,<input>,<a>
+    4.We will inspect the HTML code to identify unique web elements for automation
+    5.Together they create a webpage on the UI.
+    */
+
+    /*What is a locator?
+    -In automation,we have 2 steps for WebElements:
+    1.Identify the element//
+       -Selenium identifies the elements using locators
+       -id,className,name,tagName,linktext,partialLinkText,xpath,cssSelector
+    2.Perform the action//
+        -click
+        -type
+        -submit
+        -get text
+        -...
+    */
+
+    /*What are the Selenium locators?
+    -There are 8 selenium locators to locate an element.
+      id = ATTRIBUTE
+      name= ATTRIBUTE
+      className = ATTRIBUTE
+      tagName = TAG
+      linkText = TEXT OF A LINK
+      partialLinkText = PARTIAL OR FULL TEXT OF A LINK
+      xpath = There are multiple combinations to write xpath
+      css = There are multiple combinations to write css
+     */
 
 }

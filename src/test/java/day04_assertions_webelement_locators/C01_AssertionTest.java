@@ -29,6 +29,9 @@ public class C01_AssertionTest {
     // Sayfa url nin https://www.google.com/ oldugunu dogrulayin
     // Sayfayi kapatin
 
+
+
+
     WebDriver driver;
 
     @BeforeEach
