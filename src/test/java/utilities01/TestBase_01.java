@@ -12,6 +12,8 @@ import java.time.Duration;
 public abstract class TestBase_01 {
 
    /* TestBase class is used for calling repetitive pre-conditions and post-conditions make the driver protected because it should be visible in the other classes
+   Test base will be exteded other test classes and
+   @Before and @After methods will be automatically executed
    */
     protected static WebDriver driver;//protected bir inheritance
 
@@ -23,12 +25,12 @@ public abstract class TestBase_01 {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
     }
 
-    @AfterEach
+    /*@AfterEach
     void tearDown() {
         driver.quit();
-    }
+    }*/
     //HARD WAIT
-    public void waitForSecond(int second){
+   /* public void waitForSecond(int second){
         try {
             Thread.sleep(second*1000);
         } catch (InterruptedException e) {
@@ -44,7 +46,7 @@ public abstract class TestBase_01 {
     public void selectIndex(WebElement ddm,int index){
         Select select = new Select(ddm);
         select.selectByIndex(index);
-    }
+    }*/
            /*//select Value DropDownMenu
 
            public void selectValue (WebElement ddm, String value){
