@@ -72,6 +72,11 @@ public class Hw_02 extends TestBase_01 {
     void sizeTest() {
         driver.get("https://the-internet.herokuapp.com/dropdown");
         // 6.sizeTest adinda yeni bir method olusturun ve dropdown menudeki secenek sayisinin 3 oldugunu test edin,
+        WebElement dropDownMenu =  driver.findElement(By.id("dropdown"));
+        Select select = new Select(dropDownMenu);
+        int actualOption = select.getOptions().size();
+        Assertions.assertEquals(3, actualOption);
+
 
     }
 }

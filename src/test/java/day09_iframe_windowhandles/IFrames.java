@@ -18,11 +18,13 @@ public class IFrames extends TestBase_01 {
 //  "Left List Item 29" IS INSIDE THE IFRAME SO SWITCH TO THAT FRAME FIRST=>"
 //  Left List Item 29"iframe içinde olduğundan önce o çerçeveye geçin
 
-       /* There are 3 ways to switch to a frame:index,id/name,webelement
+       /* NOTE 1 : There are 3 ways to switch to a frame:index,id/name,webelement
         1.driver.switchTo().frame(1)->index;
         1.driver.switchTo().frame("left)->id/name;
         1.driver.switchTo.frame(driver.findElement(By.xpath("//frame[@name='left']"))->webelement
-        */
+        NOTE 2 : when you want to switch to non child such as sibling frames,we should go to parent then the child.
+        We can not jump directly to siblings.*/
+
      driver.switchTo().frame("left");
 //   NOT WE ARE INSIDE THIS IFRAME=>biz bu iframenin içinde degiliz
      String lastElement = driver.findElement(By.xpath("//li[last()]")).getText();

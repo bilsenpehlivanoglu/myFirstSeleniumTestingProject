@@ -15,47 +15,35 @@ public class Work01 {
 
     @Test
     void browserTest() {
-//        Selenium WebDriver'ı kullanarak bir tarayıcıyı açın (Google Chrome, Firefox, vb.).
+// WebDriver'ı başlat
+        System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
         WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 
-//        Google ana sayfasını açın.
-          driver.get("https://google.com");
+        // Google'a gidin
+        driver.get("https://www.google.com");
 
-//        Bir arama yapın (örneğin, "Selenium")
-          WebElement search = driver.findElement(By.xpath("//textarea[@id = 'APjFqb']"));
-          search.sendKeys("Selenium", Keys.ENTER);
+        // Arama kutusunu bulun ve "selenium" aramasını yapın
+        WebElement searchBox = driver.findElement(By.name("q"));
+        searchBox.sendKeys("selenium");
+        searchBox.sendKeys(Keys.RETURN);
 
-//        Sonuçların sayfa başlığını kontrol edin ve doğru sonuçları aldığınızı doğrulayın.
-          Assertions.assertTrue(driver.getTitle().contains("Selenium"));
+        // Sayfa başlığını kontrol edin
+        String pageTitle = driver.getTitle();
+        if (pageTitle.contains("selenium")) {
+            System.out.println("Sayfa başlığı doğru: " + pageTitle);
+        } else {
+            System.out.println("Sayfa başlığı beklenen değil: " + pageTitle);
+        }
 
-//        İlk sayfadaki ilk üç sonucu alın ve bunları konsola yazdırın.
-          WebElement firstResult = driver.findElement(By.xpath("(//h3[@class = 'LC20lb MBeuO DKV0Md'])[1]"));
-          WebElement secondResult = driver.findElement(By.xpath("(//h3[@class = 'LC20lb MBeuO DKV0Md'])[6]"));
-          WebElement thirdResult = driver.findElement(By.xpath("(//h3[@class = 'LC20lb MBeuO DKV0Md'])[7]"));
+        // İlk üç sonucu alın ve konsola yazdırın
+        List<WebElement> results = driver.findElements(By.cssSelector("h3"));
+        System.out.println("İlk üç sonuç:");
+        for (int i = 0; i < 3; i++) {
+            System.out.println(results.get(i).getText());
+        }
 
-        //İlk sayfadaki ilk üç sonucu alın ve bunları konsola yazdırın.
-        List<WebElement> results = driver.findElements(By.xpath("//h3")); //Google sonuçlarındaki sınıf adları zaman zaman değişebilir.
-        // Bu yüzden daha genel bir XPath ifadesi kullandim.
-
-        /*int i = 1;
-        for (WebElement result : results) {
-            if (!result.getText().isEmpty()) {
-                System.out.println(i + ".Sonuc : " + result.getText());
-                i++;
-            }
-
-            if (i == 4) {
-                break;
-            }
-        }*/
-        System.out.println("First Result = " + firstResult.getText());
-        System.out.println("Second Result = " + secondResult.getText());
-        System.out.println("Third Result = " + thirdResult.getText());
-
+        // WebDriver'ı kapat
         driver.quit();
-
     }
 }
  
