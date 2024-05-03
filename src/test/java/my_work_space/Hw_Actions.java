@@ -21,12 +21,14 @@ public class Hw_Actions extends TestBase_01 {
         searchBox.sendKeys("Selenium", Keys.ENTER);
 
         //Arattığımız kelimeyi arama kutusundan ctrl+x ile keselim
-        actions.keyDown(searchBox,Keys.COMMAND).sendKeys("+").sendKeys("c").perform();
+        actions.keyDown(searchBox,Keys.COMMAND).sendKeys("x").perform();
+        //driver.navigate().back();
+        //actions.keyDown(searchBox,Keys.COMMAND).sendKeys("v",Keys.ENTER).perform();
 
 // actions.keyDown(searchBox,Keys.SHIFT).sendKeys("selenium").keyUp(Keys.SHIFT).sendKeys(Keys.ENTER).perform();
         //Tekrar google sayfasına gidip kestiğimiz kelimeyi ctrl+v ile yapıştırıp tekrar aratalım
-        driver.navigate().back();
-        actions.sendKeys(searchBox,Keys.COMMAND).sendKeys("Selenium").sendKeys("v").perform();
+
+
 
         //ÖDEV : Drag webelementinin drop webelementinin üzerine bırakıldığını test edin
 
