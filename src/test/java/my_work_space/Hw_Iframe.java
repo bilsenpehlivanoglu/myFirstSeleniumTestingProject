@@ -25,7 +25,6 @@ public class Hw_Iframe extends TestBase_01 {
 
 
 
-
        /*
         //Events yazisina kadar scroll yapalim
         WebElement eventText = driver.findElement(By.xpath("//h2[.='Events']"));

@@ -1,5 +1,6 @@
 package my_work_space;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -29,12 +30,39 @@ public class Hw_Actions extends TestBase_01 {
         //Tekrar google sayfasına gidip kestiğimiz kelimeyi ctrl+v ile yapıştırıp tekrar aratalım
 
 
+    }
 
-        //ÖDEV : Drag webelementinin drop webelementinin üzerine bırakıldığını test edin
+    //ÖDEV : Drag webelementinin drop webelementinin üzerine bırakıldığını test edin
 
-//                actions.keyDown(searchBox, Keys.SHIFT)//arama kutusunda shift tuşuna basılı tutar
+    //                actions.keyDown(searchBox, Keys.SHIFT)//arama kutusunda shift tuşuna basılı tutar
 //                .sendKeys("selenium")//shift tuşuna basılı tutarak selenium yazar
 //                .keyUp(Keys.SHIFT)//shift tuşundan elini kaldırır
 //                .sendKeys("  - java",Keys.ENTER).perform();
-    }
+        @Test
+        void test01() {
+
+            //https://jqueryui.com/droppable/ adresine gidelim
+            driver.get("https://jqueryui.com/droppable/");
+
+
+
+            //Drag me to my target webelementini Drop here webelementi üzerine bıkalım
+            driver.switchTo().frame(0);
+            //Drag elementi drop elementinin üzerinde değilken dropun üzerindeki yazının "Drop here" olduğunu doğrula.
+            String  actualDropText=driver.findElement(By.cssSelector("div[id='droppable']")).getText();
+            Assertions.assertEquals("Drop here",actualDropText);
+
+
+            WebElement drag = driver.findElement(By.xpath("//div[@id='draggable']"));
+            WebElement drop = driver.findElement(By.xpath("//div[@id='droppable']"));
+            Actions actions = new Actions(driver);
+            actions.dragAndDrop(drag,drop).perform();//=> drag webelementini drop webelementinin uzerine birakir
+
+            //ÖDEV : Drag webelementinin drop webelementinin üzerine bırakıldığını test edin
+            //Drag elemeti drop elementinin üzerine bırakıldığında dropun üzerindeki yazının "Dropped!" olduğunu doğrula.
+            String  actualDropTextNext=driver.findElement(By.cssSelector("div[id='droppable']")).getText();
+            Assertions.assertEquals("Dropped!",actualDropTextNext);
+
+        }
+
 }

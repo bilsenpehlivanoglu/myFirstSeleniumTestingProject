@@ -42,6 +42,17 @@ public class Homework_02 {
 
         //sonuc sayisinin 10 milyon'dan fazla oldugunu test edin
 
+      /*  // Bulunan sonuçlarının sayısını yazdirin
+        WebElement aboutResult = driver.findElement(By.id("result-stats"));
+        String resultNumber = aboutResult.getText();
+        String number = resultNumber.split(" ")[1].replace(",", "");
+        Integer numberInt = Integer.parseInt(number);
+        System.out.println("Bulunan arama sonucu sayisi : " + numberInt);
+
+        // Sonuç sayısının 10 milyondan fazla olduğunu kontrol edin
+        Assertions.assertTrue(numberInt > 10000000, "Bulunan sonuç sayısı 10 milyondan fazla değildir!");
+        System.out.println("Bulunan sonuç sayısı 10 milyondan fazladir.");*/
+
         //Sayfayi kapatin
     }
 }

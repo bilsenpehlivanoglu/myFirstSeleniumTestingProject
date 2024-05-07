@@ -9,7 +9,7 @@ import java.util.Set;
 public class Cookies extends TestBase_01 {
 
 //1-Go to Amazon homepage
-//2-print all cookies in the console with a loop
+//2-print all the cookies in the console with a loop
 //3-Test that the number of cookies on the page is greater than 5
 //4-Test that the value of the cookie named i18n-prefs is USD
 //5-Create a cookie with the name "my favorite cookie" and the value "chocolate" and add it to the page
